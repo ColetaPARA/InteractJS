@@ -15,12 +15,6 @@
 //   );
 // }
 
-function pontuou() {
-  pontos += 1000;
-  infoPontos.innerHTML = pontos;
-}
-function acertou() {}
-
 class Score {
   #score;
 
