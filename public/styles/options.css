@@ -1,0 +1,49 @@
+/* Arquivo de estilização base */
+@import url(main.css);
+
+#main {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  height: 100vh;
+}
+
+.logo h1 {
+  font-size: 4rem;
+}
+
+.logo img {
+  height: 10vh;
+}
+
+.botao input{
+  /* tamanho */
+  width: 40vw;
+  height: 5vh;
+  margin: 1rem;
+
+  /* fonte */
+  font-weight: bold;
+  font-size: x-large;
+
+  /* estilo */
+  background-color: var(--amarelo-claro);
+  border: 2px solid black;
+  border-radius: 1rem;
+
+  box-shadow: 0.5vh 0.5vh black;
+  transition: 100ms ease-in;
+}
+
+.botao input:hover {
+  background-color: var(--verde);
+  box-shadow: 0rem 0rem black;
+
+  transform: translateX(0.5vh) translateY(0.5vh);
+  transition: 100ms ease-in;
+}
+
+.rodape {
+  font-size: 1.3rem;
+  margin: 2rem;
+}
