@@ -1,6 +1,7 @@
-document.querySelectorAll("div.lixo").forEach((lixo) => { //gera os lixos iniciais com tipos aleatoriamente escolhidos
+const lixos = document.querySelectorAll("div.lixo");
+
+lixos.forEach((lixo) => { //gera os lixos iniciais com tipos aleatoriamente escolhidos
     var num = Math.floor(Math.random() * 5);
-        // more statements
     switch (num) {
         case 0:
             lixo.classList.add('objMetal')
@@ -19,3 +20,11 @@ document.querySelectorAll("div.lixo").forEach((lixo) => { //gera os lixos inicia
         break;
     };
 });
+
+/*export function add_trash(){
+    setTimeout(() => {
+        if(lixos.length < 5){
+            console.log("falta lixo");
+        }
+    }, 1000)
+}*/

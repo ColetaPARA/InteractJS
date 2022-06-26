@@ -6,6 +6,12 @@
   grid-template-rows: 5vh 85vh 10vh;
 }
 
+body{
+  background-image: url(../assets/imgs/fundo.jpg);
+  background-repeat: no-repeat;
+  background-size: 1950px 870px;
+  background-position: top center;
+}
 .topbar {
   font-family: PixelFont;
   color: white;

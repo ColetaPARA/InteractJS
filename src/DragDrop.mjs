@@ -16,6 +16,14 @@ function dropzone(trash_obj) {
       ondrop: (event) => {
         var draggableElement = event.relatedTarget;
         score.earn_score(1000, 1);
+
+        setInterval(() => {  //verifica se 
+          if(document.querySelectorAll("div.lixo").length < 5){
+              console.log("Possui menos que 5, adicionar lixo!");
+              let trash = document.querySelector();
+          }
+        }, 2000)
+
         draggableElement.remove();
       },
     })
