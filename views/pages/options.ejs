@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("../partials/head"); %>
+    <link rel="stylesheet" href="styles/options.css" />
+  </head>
+  <body>
+    <div id="main">
+      <div class="logo centralizar">
+        <img src="assets/icons/app.ico" />
+        <h1>ColetaPará</h1>
+      </div>
+
+      <div class="botoes centralizar">
+        <div class="botao">
+          <input
+            type="button"
+            onclick="location.href='/tutorial';"
+            value="Tutorial"
+          />
+        </div>
+
+        <div class="botao">
+          <input
+            type="button"
+            onclick="location.href='/levels';"
+            value="Nivel de Dificuldade"
+          />
+        </div>
+      </div>
+
+      <div class="rodape centralizar">
+        <p>
+          Projeto desenvolvido na disciplina de
+          <b>Laboratório de Engenharia de Software</b> do curso de
+          <b>Ciência da Computação</b> da <b>UFPA</b>.
+        </p>
+        <p>2022.2</p>
+      </div>
+    </div>
+  </body>
+</html>
