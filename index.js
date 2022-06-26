@@ -20,17 +20,24 @@ app.listen(port, () => { console.log(`App startup...`); });
 
 // *** GET Routes - Mostra as paginas ***
 
-// Tela de inicialização do jogo
-app.get("/", function (req, res) {
-  res.render("pages/splash");
-});
-
 // Menu
-app.get("/menu", (req, res) => {
+app.get("/", function (req, res) {
   res.render("pages/menu");
 });
 
 // Gameplay
 app.get("/gameplay", (req, res) => {
   res.render("pages/gameplay");
+});
+
+app.get("/credits", function (req, res) {
+  res.render("pages/credits");
+});
+
+app.get("/options", function (req, res) {
+  res.render("pages/options");
+});
+
+app.get("/tutorial", function (req, res) {
+  res.render("pages/tutorial");
 });
