@@ -1,5 +1,4 @@
 import interact from "https://cdn.interactjs.io/v1.9.20/interactjs/index.js";
-// import interact from "interactjs";
 import { Score } from "./Score.mjs";
 
 const score = new Score("score");
@@ -14,12 +13,12 @@ function dropzone(trash_obj) {
       accept: trash_obj.acceptable_class,
       overlap: 1,
       ondrop: (event) => {
-        var draggableElement = event.relatedTarget;
+        let draggableElement = event.relatedTarget;
         score.earn_score(1000, 1);
         draggableElement.remove();
       },
     })
-    .on("hold", (event) => {
+    .on("hold", (_event) => {
       console.log(
         "Ao precionar a lixeira, deve aparecer alguns exemplos de lixos compativeis"
       );
