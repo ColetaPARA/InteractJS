@@ -7,6 +7,7 @@ const port = process.env.PORT || 3000;
 
 // Inicializa o `express`
 const app = express();
+app.disable("x-powered-by");
 
 // Aponta o diretório onde os arquivos estáticos estão
 app.use(express.static("public"));
@@ -16,7 +17,9 @@ app.use("/src", express.static("src"));
 app.set("view engine", "ejs");
 
 // Aponta em qual porta o web server vai rodar
-app.listen(port, () => { console.log(`App startup...`); });
+app.listen(port, () => {
+  console.log(`App startup...`);
+});
 
 // *** GET Routes - Mostra as paginas ***
 
