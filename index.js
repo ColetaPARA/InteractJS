@@ -22,6 +22,10 @@ app.listen(port, () => { console.log(`App startup...`); });
 
 // Menu
 app.get("/", function (req, res) {
+  res.render("pages/splash");
+});
+
+app.get("/menu", (req, res) => {
   res.render("pages/menu");
 });
 
@@ -40,4 +44,8 @@ app.get("/options", function (req, res) {
 
 app.get("/tutorial", function (req, res) {
   res.render("pages/tutorial");
+});
+
+app.get("/levels", function (req, res) {
+  res.render("pages/levels");
 });

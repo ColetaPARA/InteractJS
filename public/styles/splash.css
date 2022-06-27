@@ -1,0 +1,69 @@
+@import url(main.css);
+
+#main {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  height: 100vh;
+}
+
+.h1 {
+  font-size: 4rem;
+}
+
+.splash{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 200;
+  color: black;
+  text-align: center;
+  line-height: 90vh;
+}
+
+.splash.display-none{
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: -10;
+  color: black;
+  text-align: center;
+  line-height: 90vh;
+  transition: all 1s;
+}
+
+@keyframes fadeIn{
+  to{
+      opacity: 1;
+  }
+
+}
+
+.fade-in{
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+}
+
+.textoPiscando{
+  display: inline-block;
+  animation: text 2s infinite;
+}
+
+@keyframes text{
+0%{
+  opacity: 0;
+}
+50%{
+  opacity: 0.7;
+}
+100%{
+  opacity: 0;
+}
+}
