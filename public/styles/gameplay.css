@@ -7,7 +7,7 @@
 }
 
 .topbar {
-  font-family: PixelFont;
+  font-family: PixelFont, Courier, MS Courier New, Prestige, Everson Mono, monospace;
   color: white;
 
   display: grid;
