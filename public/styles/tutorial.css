@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 /* Arquivo de estilização base */
 @import url(main.css);
 @import url(menu.css);
@@ -242,3 +243,8 @@
   animation: fadeIn 1s ease-in forwards;
 >>>>>>> Jonathan
 }
+=======
+@import url(menu.css);
+@import url(gameplay.css);
+@import url(splash.css);
+>>>>>>> Jonathan
