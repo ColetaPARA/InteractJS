@@ -6,7 +6,7 @@ const ejs = require("ejs");
 const port = process.env.PORT || 3000;
 
 // Inicializa o `express`
-var app = express();
+const app = express();
 
 // Aponta o diretório onde os arquivos estáticos estão
 app.use(express.static("public"));
@@ -21,23 +21,23 @@ app.listen(port, () => { console.log(`App startup...`); });
 // *** GET Routes - Mostra as paginas ***
 
 // Menu
-app.get("/", function (req, res) {
+app.get("/", function (_req, res) {
   res.render("pages/menu");
 });
 
 // Gameplay
-app.get("/gameplay", (req, res) => {
+app.get("/gameplay", (_req, res) => {
   res.render("pages/gameplay");
 });
 
-app.get("/credits", function (req, res) {
+app.get("/credits", function (_req, res) {
   res.render("pages/credits");
 });
 
-app.get("/options", function (req, res) {
+app.get("/options", function (_req, res) {
   res.render("pages/options");
 });
 
-app.get("/tutorial", function (req, res) {
+app.get("/tutorial", function (_req, res) {
   res.render("pages/tutorial");
 });
