@@ -8,7 +8,7 @@
 body{
   background-image: url(../assets/imgs/fundo.jpg);
   background-repeat: no-repeat;
-  background-size: 1950px 870px;
+  background-size: cover;
   background-position: top center;
 }
 .topbar {
