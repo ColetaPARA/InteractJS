@@ -1,4 +1,5 @@
 const lixos = document.querySelectorAll("div.lixo");
+const objetos = document.querySelector(".objects");
 
 lixos.forEach((lixo) => { //gera os lixos iniciais com tipos aleatoriamente escolhidos
     var num = Math.floor(Math.random() * 5);
@@ -21,10 +22,29 @@ lixos.forEach((lixo) => { //gera os lixos iniciais com tipos aleatoriamente esco
     };
 });
 
-/*export function add_trash(){
-    setTimeout(() => {
-        if(lixos.length < 5){
-            console.log("falta lixo");
+export function chooseTrash(){
+    var num = Math.floor(Math.random() * 5);
+    switch (num) {
+        case 0:
+            return 'lixo objMetal';
+        case 1:
+            return 'lixo objPlastico';
+        case 2:
+            return 'lixo objPapel';
+        case 3:
+            return 'lixo objOrganico';
+        case 4:
+            return 'lixo objVidro';
+    }; 
+}
+
+export function createTrash(){
+    setInterval(() => {
+        if(document.querySelectorAll("div.lixo").length < 5){ //verifica se tem menos de 5 lixos na tela
+          let trash = document.createElement("div");
+          trash.classList = chooseTrash();
+          console.log(trash);
+          objetos.appendChild(trash);
         }
-    }, 1000)
-}*/
+      }, 3000)
+}
