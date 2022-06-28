@@ -35,7 +35,7 @@ Atualmente, o deploy do projeto está sendo realizado através do
 [Heroku](https://devcenter.heroku.com/categories/reference). No endereço a
 seguir:
 
-  <https://coletapara20.herokuapp.com/>
+  <https://coletapara.herokuapp.com/>
 
 ## 🖼️ Fontes de media
 
