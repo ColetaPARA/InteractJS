@@ -2,7 +2,7 @@ const lixos = document.querySelectorAll("div.lixo");
 const objetos = document.querySelector(".objects");
 
 lixos.forEach((lixo) => { //gera os lixos iniciais com tipos aleatoriamente escolhidos
-    var num = Math.floor(Math.random() * 5);
+    let num = Math.floor(Math.random() * 5);
     switch (num) {
         case 0:
             lixo.classList.add('objMetal')
@@ -43,7 +43,6 @@ export function createTrash(){
         if(document.querySelectorAll("div.lixo").length < 5){ //verifica se tem menos de 5 lixos na tela
           let trash = document.createElement("div");
           trash.classList = chooseTrash();
-          console.log(trash);
           objetos.appendChild(trash);
         }
       }, 3000)
