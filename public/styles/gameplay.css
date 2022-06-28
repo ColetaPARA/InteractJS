@@ -6,6 +6,13 @@
   grid-template-rows: 5vh 85vh 10vh;
 }
 
+body{
+  background-image: url(../assets/imgs/fundo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+
 .topbar {
   font-family: PixelFont, Courier, MS Courier New, Prestige, Everson Mono, monospace;
   color: white;

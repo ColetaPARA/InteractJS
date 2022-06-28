@@ -1,8 +1,9 @@
 import interact from "https://cdn.interactjs.io/v1.9.20/interactjs/index.js";
 import { Score } from "./Score.mjs";
+import { createTrash } from "./game.js";
 
 const score = new Score("score");
-
+//const objetos = document.querySelector(".objects");
 /**
  * A partir de um id cria uma zona de drop.
  * @param {String} trash_id id html da lixeira. Ex: #trashPapel
@@ -15,6 +16,7 @@ function dropzone(trash_obj) {
       ondrop: (event) => {
         let draggableElement = event.relatedTarget;
         score.earn_score(1000, 1);
+        createTrash();
         draggableElement.remove();
       },
     })
