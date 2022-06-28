@@ -19,11 +19,11 @@ lixos.forEach((lixo) => { //gera os lixos iniciais com tipos aleatoriamente esco
         case 4:
             lixo.classList.add('objVidro')
         break;
-    };
+    }
 });
 
 export function chooseTrash(){
-    var num = Math.floor(Math.random() * 5);
+    let num = Math.floor(Math.random() * 5);
     switch (num) {
         case 0:
             return 'lixo objMetal';
@@ -35,7 +35,7 @@ export function chooseTrash(){
             return 'lixo objOrganico';
         case 4:
             return 'lixo objVidro';
-    }; 
+    }
 }
 
 export function createTrash(){
