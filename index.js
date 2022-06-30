@@ -6,7 +6,8 @@ const ejs = require("ejs");
 const port = process.env.PORT || 3000;
 
 // Inicializa o `express`
-var app = express();
+const app = express();
+app.disable("x-powered-by");
 
 // Aponta o diretório onde os arquivos estáticos estão
 app.use(express.static("public"));
@@ -16,12 +17,14 @@ app.use("/src", express.static("src"));
 app.set("view engine", "ejs");
 
 // Aponta em qual porta o web server vai rodar
-app.listen(port, () => { console.log(`App startup...`); });
+app.listen(port, () => {
+  console.log(`App startup...`);
+});
 
 // *** GET Routes - Mostra as paginas ***
 
 // Menu
-app.get("/", function (req, res) {
+app.get("/", function (_req, res) {
   res.render("pages/splash");
 });
 
@@ -30,19 +33,19 @@ app.get("/menu", (req, res) => {
 });
 
 // Gameplay
-app.get("/gameplay", (req, res) => {
+app.get("/gameplay", (_req, res) => {
   res.render("pages/gameplay");
 });
 
-app.get("/credits", function (req, res) {
+app.get("/credits", function (_req, res) {
   res.render("pages/credits");
 });
 
-app.get("/options", function (req, res) {
+app.get("/options", function (_req, res) {
   res.render("pages/options");
 });
 
-app.get("/tutorial", function (req, res) {
+app.get("/tutorial", function (_req, res) {
   res.render("pages/tutorial");
 });
 

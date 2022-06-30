@@ -1,16 +1,7 @@
-<<<<<<< HEAD
 const splash = document.querySelector('.splash');
 
-document.addEventListener('DOMContentLoaded', (e)=>{
+document.addEventListener('DOMContentLoaded', (_event)=>{
     setTimeout(()=>{
         splash.classList.add('display-none');
     }, 2000);
-=======
-const splash = document.querySelector('.splash');
-
-document.addEventListener('DOMContentLoaded', (e)=>{
-    setTimeout(()=>{
-        splash.classList.add('display-none');
-    }, 2000);
->>>>>>> Jonathan
 });
