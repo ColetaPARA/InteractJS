@@ -43,6 +43,30 @@
   transition: 100ms ease-in;
 }
 
+.botaoVoltar input{
+  width: 6vw;
+  height: 5vh;
+  margin: 1rem;
+
+  font-weight: bold;
+  font-size: x-large;
+
+  background-color: var(--vermelho);
+  border: 2px solid black;
+  border-radius: 1rem;
+
+  box-shadow: 0.5vh 0.5vh black;
+  transition: 100ms ease-in;
+}
+
+.botaoVoltar input:hover {
+  background-color: var(--verde);
+  box-shadow: 0rem 0rem black;
+
+  transform: translateX(0.5vh) translateY(0.5vh);
+  transition: 100ms ease-in;
+}
+
 .rodape {
   font-size: 1.3rem;
   margin: 2rem;

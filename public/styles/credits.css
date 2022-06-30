@@ -1,5 +1,6 @@
 /* Arquivo de estilização base */
 @import url(main.css);
+@import url(menu.css);
 
 #main {
   display: grid;
