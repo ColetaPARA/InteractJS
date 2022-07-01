@@ -1,6 +1,7 @@
 const lixos = document.querySelectorAll("div.lixo");
 const objetos = document.querySelector(".objects");
-
+var times = document.querySelector("#time");
+var timer = 0;
 lixos.forEach((lixo) => { //gera os lixos iniciais com tipos aleatoriamente escolhidos
     let num = Math.floor(Math.random() * 5);
     switch (num) {
@@ -22,6 +23,44 @@ lixos.forEach((lixo) => { //gera os lixos iniciais com tipos aleatoriamente esco
     }
 });
 
+
+setInterval(() => {
+    if(timer < 5){
+        console.log(time);
+        timer ++;
+        times.innerHTML = timer;
+    }
+    else{
+        stopGame();
+        console.log("fazer algo para parar o jogo");    
+    }  
+}, 1000);
+
+function stopGame (){
+    
+}
+/*
+// Timer with 1000ms (1 second) base interval resolution.
+const timer = new TaskTimer(1000);
+
+// Add task(s) based on tick intervals.
+timer.add({
+    id: 'job1',         // unique id of the task
+    tickInterval: 5,    // run every 5 ticks (5 x interval = 5000 ms)
+    totalRuns: 10,      // run 10 times only. (omit for unlimited times)
+    callback(task) {
+        // code to be executed on each run
+        console.log(task.name + ' task has run ' + task.currentRuns + ' times.');
+        // stop the timer anytime you like
+        if (someCondition()) timer.stop();
+        // or simply remove this task if you have others
+        if (someCondition()) timer.remove(task.id);
+    }
+});
+
+// Start the timer
+timer.start();
+*/
 export function chooseTrash(){
     let num = Math.floor(Math.random() * 5);
     switch (num) {
