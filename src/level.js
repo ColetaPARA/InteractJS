@@ -1,11 +1,13 @@
-const tempoLixos = 1000;
+var dificuldade;
 
 var facil = document.querySelector("#easy").addEventListener("click", () => {
-    var tempoLixos = 10000;
+    dificuldade = 'easy';
 });
 var medio = document.querySelector("#medium").addEventListener("click", () => {
-    var tempoLixos = 6000;
+    dificuldade = 'medium';
 });
 var dificil = document.querySelector("#hard").addEventListener("click", () => {
-    var tempoLixos = 2000;
+    dificuldade = 'hard';
 });
+
+export {dificuldade};

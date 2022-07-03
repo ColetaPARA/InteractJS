@@ -4,7 +4,6 @@ import { Game } from "./game.js";
 
 const gameplay = new Game();
 
-//const objetos = document.querySelector(".objects");
 /**
  * A partir de um id cria uma zona de drop.
  * @param {String} trash_id id html da lixeira. Ex: #trashPapel
