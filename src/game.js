@@ -36,7 +36,7 @@ class Game {
 
     startTime(){
         var myInterval = setInterval(() => {
-            if(this.tempo < 60){
+            if(this.tempo < 3){
                 console.log(time);
                 this.tempo ++;
                 this.tempos.innerHTML = this.tempo;
@@ -52,11 +52,23 @@ class Game {
         //criar função que verifica se usuário perdeu
         //criar função que verifica se usuário venceu
         let corpoHtml = document.body;
-        let gameOver = document.createElement('div');      
+        let gameOver = document.createElement('div');
+        let botao = document.createElement('div');
+        let inputBotao = document.createElement('input');
         gameOver.classList.add('gameover');
-        gameOver.innerHTML = "GAME OVER </br>SCORE: {}<button onclick='location.href='/menu';'>GO</button>";
+        botao.classList.add('botaoGameOver');
+        inputBotao.type = 'button';
+        
+        inputBotao.value = "VOLTAR";
+        gameOver.innerHTML = "GAME OVER </br>SCORE:";
         corpoHtml.appendChild(gameOver);
+        gameOver.appendChild(botao);
+        botao.appendChild(inputBotao);
         clearInterval(Interval);
+        inputBotao.onclick = function () {
+            console.log("clicou");
+            window.location.href = "/menu";
+        }
     }
 
     chooseTrash(){

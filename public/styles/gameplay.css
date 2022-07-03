@@ -64,6 +64,33 @@ body{
   transition: 100ms ease-in;
 }
 
+.botaoGameOver input{
+  /* tamanho */
+  width: 8vw;
+  height: 5vh;
+  margin: 1rem;
+
+  /* fonte */
+  font-weight: bold;
+  font-size: x-large;
+
+  /* estilo */
+  background-color: var(--amarelo-claro);
+  border: 2px solid black;
+  border-radius: 1rem;
+
+  box-shadow: 0.5vh 0.5vh black;
+  transition: 100ms ease-in;
+}
+
+.botaoGameOver input:hover {
+  background-color: var(--vermelho);
+  box-shadow: 0rem 0rem black;
+
+  transform: translateX(0.5vh) translateY(0.5vh);
+  transition: 100ms ease-in;
+}
+
 .objects {
   display: flex;
   justify-content: center;
