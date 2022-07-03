@@ -28,7 +28,7 @@ class Score {
     return this.#score;
   }
 
-  earn_score(points, weight) {
+  earnScore(points, weight) {
     this.#score += Math.abs(points * weight);
     console.log(`Pontuação atual ${this.#score}`);
     var scoreElement = document.getElementById(this.#className);
@@ -36,7 +36,7 @@ class Score {
     scoreElement.innerHTML = this.#score;
   }
 
-  lose_score(points) {
+  loseHeart(points) {
     if (this.#score - points <= 0) {
       this.#score = 0;
     } else {

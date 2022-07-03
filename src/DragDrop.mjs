@@ -18,7 +18,7 @@ function dropzone(trash_obj) {
       overlap: 1,
       ondrop: (event) => {
         var draggableElement = event.relatedTarget;
-        score.earn_score(1000, 1);
+        score.earnScore(1000, 1);
         gameplay.createTrash();
         draggableElement.remove();
       },

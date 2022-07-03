@@ -1,9 +1,11 @@
+import { Score } from "./Score.mjs";
+
 class Game {
     constructor() {
         this.lixos = document.querySelectorAll("div.lixo");
         this.objetos = document.querySelector(".objects");
         this.tempos = document.querySelector("#time");
-        this.pontos = 0;
+        this.score = new Score();
         this.tempo = 0;
 
         this.start();
@@ -52,15 +54,14 @@ class Game {
         //criar função que verifica se usuário perdeu
         //criar função que verifica se usuário venceu
         let corpoHtml = document.body;
-        let gameOver = document.createElement('div');
-        let botao = document.createElement('div');
-        let inputBotao = document.createElement('input');
+        let gameOver = document.createElement('div');   //cria div para o texto GAMEOVER
+        let botao = document.createElement('div');      //cria div para o botao
+        let inputBotao = document.createElement('input');//cria input para adicionar o texto MENU do tipo botao
         gameOver.classList.add('gameover');
-        botao.classList.add('botaoGameOver');
+        botao.classList.add('botaoGameOver');         
         inputBotao.type = 'button';
-        
         inputBotao.value = "VOLTAR";
-        gameOver.innerHTML = "GAME OVER </br>SCORE:";
+        gameOver.innerHTML = `GAME OVER </br>SCORE: ${this.tempo}`;
         corpoHtml.appendChild(gameOver);
         gameOver.appendChild(botao);
         botao.appendChild(inputBotao);
