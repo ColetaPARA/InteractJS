@@ -47,9 +47,6 @@ body{
 }
 
 .botaoVoltar input{
-  width: 4vw;
-  height: 3.5vh;
-
   font-weight: bold;
   font-size: x-large;
 
@@ -69,10 +66,8 @@ body{
   transition: 100ms ease-in;
 }
 
-.botaoGameOver input{
+.botaoStop input{
   /* tamanho */
-  width: 8vw;
-  height: 5vh;
   margin: 1rem;
 
   /* fonte */
@@ -88,7 +83,7 @@ body{
   transition: 100ms ease-in;
 }
 
-.botaoGameOver input:hover {
+.botaoStop input:hover {
   background-color: var(--vermelho);
   box-shadow: 0rem 0rem black;
 
@@ -151,9 +146,8 @@ body{
   bottom:0; 
   right:0; 
   background-color:rgba(0,0,0,0.8);
-  animation:gameover;
   font-size:80px; 
-  color:white; 
+  color: var(--vermelho); 
   font-weight:bold; 
   text-align:center; 
   align-items: center;
@@ -161,8 +155,19 @@ body{
   line-height:150px;
 }
 
-@keyframes gameover{
-  0%{left:-5000px;bottom:100%;}
-  97%{left:-5000px;bottom:100%;}
-  100%{ left:0px;}
+.win{
+  position:fixed; 
+  z-index:100000; 
+  left:0; 
+  top:0; 
+  bottom:0; 
+  right:0; 
+  background-color:rgba(0,0,0,0.8);
+  font-size:80px; 
+  color: var(--verde); 
+  font-weight:bold; 
+  text-align:center; 
+  align-items: center;
+  text-indent:0;  
+  line-height:150px;
 }

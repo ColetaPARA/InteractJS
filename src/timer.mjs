@@ -5,12 +5,11 @@ class Timer {
     #dificulty = {
       easy: 90,
       medium: 60,
-      hard: 3, //3 para teste
+      hard: 10, //3 para teste
     };
   
     constructor(dificulty) {
       this.#html_id = document.querySelector("#time");
-      console.log(this.#html_id);
       this.#timer_seconds = this.#dificulty[dificulty];
     }
 
@@ -32,6 +31,9 @@ class Timer {
   
     update_html_element(time_left) {
       this.#html_id.innerHTML = time_left;
+    }
+    changeTimer(dificuldade) {
+      this.#timer_seconds = this.#dificulty[dificuldade];
     }
 }
 
