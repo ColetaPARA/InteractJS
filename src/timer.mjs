@@ -3,9 +3,9 @@ class Timer {
     #html_id;
   
     #dificulty = {
-      easy: 90,
+      easy: 3, //valor teste
       medium: 60,
-      hard: 10, //3 para teste
+      hard: 30,
     };
   
     constructor(dificulty) {

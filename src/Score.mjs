@@ -20,7 +20,7 @@ class Score {
   #className;
 
   #scoreToWin = {
-    easy: 5000,
+    easy: 1000, //valor teste
     medium: 7000,
     hard: 10000,
   };
