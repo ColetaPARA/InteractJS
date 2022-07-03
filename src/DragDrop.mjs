@@ -1,9 +1,11 @@
 import interact from "https://cdn.interactjs.io/v1.9.20/interactjs/index.js";
 // import interact from "interactjs";
 import { Score } from "./Score.mjs";
-import { createTrash } from "./game.js";
+import { Game } from "./game.js"
 
 const score = new Score("score");
+const gameplay = new Game();
+
 //const objetos = document.querySelector(".objects");
 /**
  * A partir de um id cria uma zona de drop.
@@ -17,7 +19,7 @@ function dropzone(trash_obj) {
       ondrop: (event) => {
         var draggableElement = event.relatedTarget;
         score.earn_score(1000, 1);
-        createTrash();
+        gameplay.createTrash();
         draggableElement.remove();
       },
     })
