@@ -110,3 +110,27 @@ body{
   height: 9vh;
   width: 9vh;
 }
+
+.gameover{
+  position:fixed; 
+  z-index:100000; 
+  left:0; 
+  top:0; 
+  bottom:0; 
+  right:0; 
+  background-color:rgba(0,0,0,0.8);
+  animation:gameover;
+  font-size:80px; 
+  color:white; 
+  font-weight:bold; 
+  text-align:center; 
+  align-items: center;
+  text-indent:0;  
+  line-height:150px;
+}
+
+@keyframes gameover{
+  0%{left:-5000px;bottom:100%;}
+  97%{left:-5000px;bottom:100%;}
+  100%{ left:0px;}
+}

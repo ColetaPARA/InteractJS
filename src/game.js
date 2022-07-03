@@ -23,44 +23,34 @@ lixos.forEach((lixo) => { //gera os lixos iniciais com tipos aleatoriamente esco
     }
 });
 
-
-setInterval(() => {
-    if(timer < 5){
+const myInterval = setInterval(() => {
+    if(timer < 1){
         console.log(time);
         timer ++;
         times.innerHTML = timer;
     }
-    else{
+    else{       
+        console.log("fazer algo para parar o jogo");  
         stopGame();
-        console.log("fazer algo para parar o jogo");    
-    }  
+    }
 }, 1000);
 
 function stopGame (){
-    
+    //criar função que verifica se usuário perdeu
+    //criar função que verifica se usuário venceu
+    let corpoHtml = document.body;
+    let gameOver = document.createElement('div');
+    let butao = '';
+    gameOver.classList.add('gameover');
+    gameOver.innerHTML = "GAME OVER </br>SCORE: {}<button onclick='location.href='/menu';'>GO</button>";
+    corpoHtml.appendChild(gameOver);
+    clearInterval(myInterval);
+    document.addEventListener('oninput', ()=>{
+        console.log('clicou na tela');
+        
+    });
 }
-/*
-// Timer with 1000ms (1 second) base interval resolution.
-const timer = new TaskTimer(1000);
 
-// Add task(s) based on tick intervals.
-timer.add({
-    id: 'job1',         // unique id of the task
-    tickInterval: 5,    // run every 5 ticks (5 x interval = 5000 ms)
-    totalRuns: 10,      // run 10 times only. (omit for unlimited times)
-    callback(task) {
-        // code to be executed on each run
-        console.log(task.name + ' task has run ' + task.currentRuns + ' times.');
-        // stop the timer anytime you like
-        if (someCondition()) timer.stop();
-        // or simply remove this task if you have others
-        if (someCondition()) timer.remove(task.id);
-    }
-});
-
-// Start the timer
-timer.start();
-*/
 export function chooseTrash(){
     let num = Math.floor(Math.random() * 5);
     switch (num) {
