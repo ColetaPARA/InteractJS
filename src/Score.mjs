@@ -32,7 +32,6 @@ class Score {
     this.#score += Math.abs(points * weight);
     console.log(`Pontuação atual ${this.#score}`);
     var scoreElement = document.getElementById(this.#className);
-    console.log(scoreElement);
     scoreElement.innerHTML = this.#score;
   }
 

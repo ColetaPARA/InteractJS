@@ -1,9 +1,7 @@
 import interact from "https://cdn.interactjs.io/v1.9.20/interactjs/index.js";
 // import interact from "interactjs";
-import { Score } from "./Score.mjs";
-import { Game } from "./game.js"
+import { Game } from "./game.js";
 
-const score = new Score("score");
 const gameplay = new Game();
 
 //const objetos = document.querySelector(".objects");
@@ -18,7 +16,7 @@ function dropzone(trash_obj) {
       overlap: 1,
       ondrop: (event) => {
         var draggableElement = event.relatedTarget;
-        score.earnScore(1000, 1);
+        gameplay.ganhaPonto();
         gameplay.createTrash();
         draggableElement.remove();
       },

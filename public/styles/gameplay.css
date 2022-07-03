@@ -39,6 +39,11 @@ body{
 
 #time{
   font-size: 2rem;
+  color: black;
+  font-weight: bold;
+  background-color: white;
+  padding: 0 1rem;
+  border-radius: 1rem;
 }
 
 .botaoVoltar input{

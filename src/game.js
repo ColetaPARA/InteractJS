@@ -1,14 +1,14 @@
 import { Score } from "./Score.mjs";
+import { Timer } from "./timer.mjs";
 
 class Game {
     constructor() {
         this.lixos = document.querySelectorAll("div.lixo");
         this.objetos = document.querySelector(".objects");
-        this.tempos = document.querySelector("#time");
-        this.score = new Score();
-        this.tempo = 0;
+        this.pontuacao = new Score('score');
+        this.tempo = new Timer('hard');
 
-        this.start();
+        this.start();   
     }
 
     start() {
@@ -32,27 +32,24 @@ class Game {
                 break;
             }
         });
-        this.startTime();
-        this.createTrash()
+        this.createTrash();
+        this.tempo.startTimer();
+        this.verificaTime();
+        
     }
 
-    startTime(){
+    verificaTime(){       
         var myInterval = setInterval(() => {
-            if(this.tempo < 3){
-                console.log(time);
-                this.tempo ++;
-                this.tempos.innerHTML = this.tempo;
-            }
-            else{       
-                console.log("fazer algo para parar o jogo");  
-                this.stop(myInterval);
+            if(this.tempo.time == -1){   
+                this.stop();
+                clearInterval(myInterval);
             }
         }, 1000);
     }
 
-    stop(Interval) {
-        //criar função que verifica se usuário perdeu
-        //criar função que verifica se usuário venceu
+    stop() {
+        //criar if que verifica se usuário perdeu
+        //criar if que verifica se usuário venceu
         let corpoHtml = document.body;
         let gameOver = document.createElement('div');   //cria div para o texto GAMEOVER
         let botao = document.createElement('div');      //cria div para o botao
@@ -61,11 +58,10 @@ class Game {
         botao.classList.add('botaoGameOver');         
         inputBotao.type = 'button';
         inputBotao.value = "VOLTAR";
-        gameOver.innerHTML = `GAME OVER </br>SCORE: ${this.tempo}`;
+        gameOver.innerHTML = `GAME OVER </br>SCORE: ${this.pontuacao.current}`;
         corpoHtml.appendChild(gameOver);
         gameOver.appendChild(botao);
         botao.appendChild(inputBotao);
-        clearInterval(Interval);
         inputBotao.onclick = function () {
             console.log("clicou");
             window.location.href = "/menu";
@@ -96,6 +92,10 @@ class Game {
               this.objetos.appendChild(trash);
             }
           }, 3000)
+    }
+
+    ganhaPonto() {
+        this.pontuacao.earnScore(1000, 1);
     }
     
 }
