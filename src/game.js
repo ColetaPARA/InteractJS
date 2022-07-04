@@ -4,10 +4,10 @@ import { Timer } from "./timer.mjs";
 
 class Game {
     constructor() {
-        this.lixos = document.querySelectorAll("div.lixo");
+        this.lixos = document.querySelectorAll("img.lixo");
         this.objetos = document.querySelector(".objects");
         this.pontuacao = new Score('score', 'easy');
-        this.tempo = new Timer('easy');  
+        this.tempo = new Timer('hard');  
 
         this.start();
     }
@@ -18,18 +18,23 @@ class Game {
             switch (num) {
                 case 0:
                     lixo.classList.add('objMetal')
+                    lixo.src = this.chooseSVGTrash('objMetal');
                     break;
                 case 1:
                     lixo.classList.add('objPlastico')
+                    lixo.src = this.chooseSVGTrash('objPlastico');
                     break;
                 case 2:
                     lixo.classList.add('objPapel')
+                    lixo.src = this.chooseSVGTrash('objPapel');
                     break;
                 case 3:
                     lixo.classList.add('objOrganico')
+                    lixo.src = this.chooseSVGTrash('objOrganico');
                     break;
                 case 4:
                     lixo.classList.add('objVidro')
+                    lixo.src = this.chooseSVGTrash('objVidro');
                 break;
             }
         });
@@ -124,12 +129,44 @@ class Game {
         }
     }
 
+    chooseSVGTrash(typeObj){
+        let num = Math.floor(Math.random() * 5);
+        switch (typeObj) {
+            case 'objMetal':
+                return 'assets/svgs/metal/metal'+num+'.svg';
+            case 'objPlastico':
+                return 'assets/svgs/plastic/plastic'+num+'.svg';
+            case 'objPapel':
+                return 'assets/svgs/paper/paper'+num+'.svg';
+            case 'objOrganico':
+                return 'assets/svgs/organic/organic'+num+'.svg';
+            case 'objVidro':
+                return 'assets/svgs/glass/glass'+num+'.svg';
+        }
+        
+        
+        /*switch (num) {
+            case 0:
+                return 'assets/svgs/'+typeObj+'/'+typeObj+num+'.svg';
+            case 1:
+                return 'assets/svgs/'+typeObj+'/'+typeObj+num+'.svg';
+            case 2:
+                return 'assets/svgs/'+typeObj+'/'+typeObj+num+'.svg';
+            case 3:
+                return 'assets/svgs/'+typeObj+'/'+typeObj+num+'.svg';
+            case 4:
+                return 'assets/svgs/'+typeObj+'/'+typeObj+num+'.svg';
+        }
+        PARA A REFATORAÇÃO
+        */
+    }
     createTrash(){
         setInterval(() => {
-            if(document.querySelectorAll("div.lixo").length < 5){ //verifica se tem menos de 5 lixos na tela
-              let trash = document.createElement("div");
+            if(document.querySelectorAll("img.lixo").length < 5){ //verifica se tem menos de 5 lixos na tela
+              let trash = document.createElement("img");
               trash.classList = this.chooseTrash();
-              console.log(trash);
+              trash.src = this.chooseSVGTrash(trash.className.split(' ')[1]); //pega o segundo elemento da classe, pulado a classe lixo
+              console.log(trash.className.split(' ')[1]);
               this.objetos.appendChild(trash);
             }
           }, 3000)
