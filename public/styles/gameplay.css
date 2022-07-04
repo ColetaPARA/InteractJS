@@ -2,7 +2,7 @@
 
 #main {
   display: grid;
-  grid-template-rows: 5vh 85vh 10vh;
+  grid-template-rows: 7vh 85vh 8vh;
 }
 
 body{
@@ -16,7 +16,7 @@ body{
   color: white;
 
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   justify-items: center;
   align-items: center;
 
@@ -87,6 +87,14 @@ body{
   background-color: var(--vermelho);
   box-shadow: 0rem 0rem black;
 
+  transform: translateX(0.5vh) translateY(0.5vh);
+  transition: 100ms ease-in;
+}
+
+.botaoOptions input{
+  transition: 100ms ease-in;
+}
+.botaoOptions input:hover{
   transform: translateX(0.5vh) translateY(0.5vh);
   transition: 100ms ease-in;
 }
