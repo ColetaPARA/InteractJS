@@ -1,4 +1,5 @@
 @import url(main.css);  
+@import url(botoes.css);
 
 #main {
   display: grid;
@@ -46,58 +47,7 @@ body{
   border-radius: 1rem;
 }
 
-.botaoVoltar input{
-  font-weight: bold;
-  font-size: x-large;
 
-  background-color: var(--vermelho);
-  border: 2px solid white;
-  border-radius: 1rem;
-
-  box-shadow: 0.5vh 0.5vh white;
-  transition: 100ms ease-in;
-}
-
-.botaoVoltar input:hover {
-  background-color: var(--verde);
-  box-shadow: 0rem 0rem black;
-
-  transform: translateX(0.5vh) translateY(0.5vh);
-  transition: 100ms ease-in;
-}
-
-.botaoStop input{
-  /* tamanho */
-  margin: 1rem;
-
-  /* fonte */
-  font-weight: bold;
-  font-size: x-large;
-
-  /* estilo */
-  background-color: var(--amarelo-claro);
-  border: 2px solid black;
-  border-radius: 1rem;
-
-  box-shadow: 0.5vh 0.5vh black;
-  transition: 100ms ease-in;
-}
-
-.botaoStop input:hover {
-  background-color: var(--vermelho);
-  box-shadow: 0rem 0rem black;
-
-  transform: translateX(0.5vh) translateY(0.5vh);
-  transition: 100ms ease-in;
-}
-
-.botaoOptions input{
-  transition: 100ms ease-in;
-}
-.botaoOptions input:hover{
-  transform: translateX(0.5vh) translateY(0.5vh);
-  transition: 100ms ease-in;
-}
 
 .objects {
   display: flex;
