@@ -32,7 +32,7 @@ function dropzone(trash_obj) {
  */
 function draggable(obj_id) {
   interact(obj_id).draggable({
-    inertia: true,
+    inertia: false,
     modifiers: [
       interact.modifiers.restrictRect({
         restriction: "#main",
