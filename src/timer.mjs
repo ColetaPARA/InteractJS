@@ -3,7 +3,7 @@ class Timer {
     #html_id;
   
     #dificulty = {
-      easy: 90, //valor teste
+      easy: 90,
       medium: 60,
       hard: 30,
     };
@@ -20,7 +20,6 @@ class Timer {
     startTimer() {
       let timer = setInterval(() => {
         this.update_html_element(this.#timer_seconds);
-        console.log(this.#timer_seconds);
         this.#timer_seconds--;
         if (this.#timer_seconds == -1) {
           this.#html_id.innerHTML = "0";
