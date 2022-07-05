@@ -12,7 +12,7 @@ function dropzone(trash_obj) {
   interact(trash_obj.trash_id)
     .dropzone({
       accept: trash_obj.acceptable_class,
-      overlap: 1,
+      overlap: 0.5,
       ondrop: (event) => {
         var draggableElement = event.relatedTarget;
         gameplay.ganhaPonto();
