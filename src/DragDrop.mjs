@@ -16,7 +16,15 @@ function dropzone(trash_obj) {
       ondrop: (event) => {
         var draggableElement = event.relatedTarget;
         gameplay.ganhaPonto();
+        console.log(draggableElement.className.split(' ')[1].substring(3));
         draggableElement.remove();
+        console.log(trash_obj['trash_id'].substring(6));
+        if(trash_obj['trash_id'].substring(6) == draggableElement.className.split(' ')[1].substring(3)){
+          console.log('pontuou');
+        }
+        else{
+          console.log('nao pontuou');
+        }
       },
     })
     .on("hold", (event) => {

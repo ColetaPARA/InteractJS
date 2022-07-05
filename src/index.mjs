@@ -3,7 +3,7 @@ import { dropzone, draggable } from "./DragDrop.mjs";
 const trashs = [
   {
     trash_id: "#trashPlastico",
-    acceptable_class: ".objPlastico",
+    acceptable_class: ".lixo",
   },
   {
     trash_id: "#trashMetal",
