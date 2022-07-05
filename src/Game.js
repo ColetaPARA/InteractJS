@@ -4,8 +4,6 @@ import Dificulty from "./Dificulty.mjs";
 
 export const dificulty =  new Dificulty();
 
-export const dificulty =  new Dificulty();
-
 class Game {
     constructor() {
         this.dificulty = dificulty;
