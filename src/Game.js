@@ -11,7 +11,6 @@ class Game {
         this.objetos = document.querySelector(".objects");
         this.pontuacao = new Score('score', dificulty.getDificulty());
         this.tempo = new Timer(dificulty.getDificulty());  
-        console.log('constroi game');
         this.start();
     }
 
@@ -181,13 +180,6 @@ class Game {
 
     ganhaPonto() {
         this.pontuacao.earnScore(1000, 1);
-    }
-    setNewDificulty() {
-        //let newDificulty = 
-        this.dificuldade.setDificulty();
-        this.pontuacao.changeScoreToWin(this.dificuldade.dificulty);
-        this.tempo.changeTimer(this.dificuldade.dificulty); 
-        console.log(this.dificuldade.dificulty)
     }
 }
 

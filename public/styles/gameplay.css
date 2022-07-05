@@ -17,7 +17,7 @@ body{
   color: white;
 
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(5, 1fr);
   justify-items: center;
   align-items: center;
 
@@ -45,14 +45,6 @@ body{
   background-color: white;
   padding: 0 1rem;
   border-radius: 1rem;
-}
-
-
-
-.objects {
-  display: flex;
-  justify-content: center;
-  align-content: center;
 }
 
 .lixo {
@@ -85,6 +77,7 @@ body{
   grid-template-columns: repeat(5, 1fr);
   justify-items: center;
   align-content: flex-end;
+  margin-bottom: 50%;
 }
 
 .lixeira {
