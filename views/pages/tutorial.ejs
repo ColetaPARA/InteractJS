@@ -3,13 +3,49 @@
   <head>
     <%- include("../partials/head"); %>
     <link rel="stylesheet" href="styles/tutorial.css" />
+    <link rel="stylesheet" href="styles/tutorial.css" />
+
     <script src="src/index.mjs" type="module"></script>
     <script src="src/tutorial.js" type="module"></script>    
   </head>
   <body>
     <div id="main">
-      <div class="splash">
-        <h1 class="fade-in centralizar" >Oi, você deve está com dificuldade, certo?</h1>
+      <div class="topbar">        
+        <div class="botaoVoltar">
+          <input
+          type="button"
+          onclick="location.href='/menu';"
+          value="Sair"
+        />
+        </div>        
+        <div id="score">0000</div>
+        <div id="time">--</div>
+        <div id="life">
+          <img src="assets/svgs/pixel_heart.svg">
+          <img src="assets/svgs/pixel_heart.svg">
+          <img src="assets/svgs/pixel_heart.svg">
+        </div>
+        <div>
+          <input 
+            type="image" 
+            src="assets/fullscreen.svg" height="35" 
+            onclick="goFS();"
+          />
+        </div>     
+      </div>
+      <div class="objects notSelected">
+        <img class="lixo"/>
+        <img class="lixo"/>
+        <img class="lixo"/>
+        <img class="lixo"/>
+        <img class="lixo"/>
+      </div>
+      <div class="footer">
+        <img class="lixeira" id="trashPlastico" src="assets/svgs/pixel_lixeira_plastico.svg" />
+        <img class="lixeira" id="trashMetal" src="assets/svgs/pixel_lixeira_metal.svg" />
+        <img class="lixeira" id="trashPapel" src="assets/svgs/pixel_lixeira_papel.svg" />
+        <img class="lixeira" id="trashOrganico" src="assets/svgs/pixel_lixeira_organico.svg" />
+        <img class="lixeira" id="trashVidro" src="assets/svgs/pixel_lixeira_vidro.svg" />
       </div>
     </div>
     
