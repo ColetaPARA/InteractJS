@@ -56,12 +56,8 @@ body{
 }
 
 .lixo {
-  height: 5vh;
-  width: 5vh;
-
-  border-radius: 50%;
-  border: 2px dashed black;
-
+  height: 7vh;
+  width: 7vh;
   margin: 10px;
 }
 

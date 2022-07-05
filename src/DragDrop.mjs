@@ -16,7 +16,6 @@ function dropzone(trash_obj) {
       ondrop: (event) => {
         var draggableElement = event.relatedTarget;
         gameplay.ganhaPonto();
-        gameplay.createTrash();
         draggableElement.remove();
       },
     })

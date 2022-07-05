@@ -173,7 +173,7 @@ class Game {
               trash.src = this.chooseSVGTrash(trash.className.split(' ')[1]); //pega o segundo elemento da classe, pulado a classe lixo
               this.objetos.appendChild(trash);
             }
-          }, 3000)
+          }, 5000)
     }
 
     ganhaPonto() {
