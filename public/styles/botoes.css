@@ -69,11 +69,3 @@
   transform: translateX(0.5vh) translateY(0.5vh);
   transition: 100ms ease-in;
 }
-
-.botaoOptions input{
-  transition: 100ms ease-in;
-}
-.botaoOptions input:hover{
-  transform: translateX(0.5vh) translateY(0.5vh);
-  transition: 100ms ease-in;
-}

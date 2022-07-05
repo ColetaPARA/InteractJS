@@ -166,7 +166,6 @@ class Game {
               let trash = document.createElement("img");
               trash.classList = this.chooseTrash();
               trash.src = this.chooseSVGTrash(trash.className.split(' ')[1]); //pega o segundo elemento da classe, pulado a classe lixo
-              console.log(trash.className.split(' ')[1]);
               this.objetos.appendChild(trash);
             }
           }, 3000)

@@ -4,6 +4,7 @@
     <%- include("../partials/head"); %>
     <link rel="stylesheet" href="styles/gameplay.css" />
     <script src="src/index.mjs" type="module"></script>
+    <script src="src/fullscreen.mjs" type="module"></script>
   </head>
   <body>
     <div id="main">
@@ -12,7 +13,7 @@
           <input
           type="button"
           onclick="location.href='/menu';"
-          value="Voltar"
+          value="Sair"
         />
         </div>        
         <div id="score">0000</div>
@@ -21,12 +22,13 @@
           <img src="assets/svgs/pixel_heart.svg">
           <img src="assets/svgs/pixel_heart.svg">
           <img src="assets/svgs/pixel_heart.svg">
-        </div class="botaoOptions">
+        </div>
         <div>
           <input 
             type="image" 
-            src="assets/pause.svg" height="35" 
-            onclick="location.href='/menu';">
+            src="assets/fullscreen.svg" height="35" 
+            onclick="goFS();"
+          />
         </div>     
       </div>
       <div class="objects notSelected">
