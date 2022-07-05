@@ -1,13 +1,13 @@
-var dificuldade;
+import { dificulty } from "./Game.js";
 
-var facil = document.querySelector("#easy").addEventListener("click", () => {
-    dificuldade = 'easy';
-});
-var medio = document.querySelector("#medium").addEventListener("click", () => {
-    dificuldade = 'medium';
-});
-var dificil = document.querySelector("#hard").addEventListener("click", () => {
-    dificuldade = 'hard';
+document.querySelector("#easy").addEventListener("click", () => {
+  dificulty.setDificulty("easy");
 });
 
-export {dificuldade};
+document.querySelector("#medium").addEventListener("click", () => {
+  dificulty.setDificulty("medium");
+});
+
+document.querySelector("#hard").addEventListener("click", () => {
+  dificulty.setDificulty("hard");
+});

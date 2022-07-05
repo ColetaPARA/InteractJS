@@ -3,7 +3,7 @@ class Timer {
     #html_id;
   
     #dificulty = {
-      easy: 3, //valor teste
+      easy: 90, //valor teste
       medium: 60,
       hard: 30,
     };

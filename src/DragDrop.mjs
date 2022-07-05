@@ -1,6 +1,6 @@
 import interact from "https://cdn.interactjs.io/v1.9.20/interactjs/index.js";
 // import interact from "interactjs";
-import { Game } from "./game.js";
+import { Game } from "./Game.js";
 
 const gameplay = new Game();
 

@@ -1,14 +1,17 @@
 import { Score } from "./Score.mjs";
 import { Timer } from "./timer.mjs";
+import Dificulty from "./Dificulty.mjs";
 
+export const dificulty =  new Dificulty();
 
 class Game {
     constructor() {
+        this.dificulty = dificulty;
         this.lixos = document.querySelectorAll("img.lixo");
         this.objetos = document.querySelector(".objects");
-        this.pontuacao = new Score('score', 'easy');
-        this.tempo = new Timer('hard');  
-
+        this.pontuacao = new Score('score', dificulty.getDificulty());
+        this.tempo = new Timer(dificulty.getDificulty());  
+        console.log('constroi game');
         this.start();
     }
 
