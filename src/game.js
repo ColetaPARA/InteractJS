@@ -130,17 +130,22 @@ class Game {
     }
 
     chooseSVGTrash(typeObj){
-        let num = Math.floor(Math.random() * 5);
+        let num;
         switch (typeObj) {
             case 'objMetal':
+                num = Math.floor(Math.random() * 17);
                 return 'assets/svgs/metal/metal'+num+'.svg';
             case 'objPlastico':
+                num = Math.floor(Math.random() * 9);
                 return 'assets/svgs/plastic/plastic'+num+'.svg';
             case 'objPapel':
+                num = Math.floor(Math.random() * 16);
                 return 'assets/svgs/paper/paper'+num+'.svg';
             case 'objOrganico':
+                num = Math.floor(Math.random() * 15);
                 return 'assets/svgs/organic/organic'+num+'.svg';
             case 'objVidro':
+                num = Math.floor(Math.random() * 14);
                 return 'assets/svgs/glass/glass'+num+'.svg';
         }
         
