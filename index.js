@@ -29,7 +29,6 @@ app.get("/menu", (req, res) => {
   res.render("pages/menu");
 });
 
-// Gameplay
 app.get("/gameplay", (req, res) => {
   res.render("pages/gameplay");
 });
