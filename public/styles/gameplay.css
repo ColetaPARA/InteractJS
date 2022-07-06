@@ -67,29 +67,24 @@ body{
 }
 
 .lixo {
-  height: 7vh;
-  width: 7vh;
+  height: 6vh;
+  width: 6vh;
   margin: 10px;
 }
-
+/*
 .objMetal {
-  background-color: var(--metal);
 }
 
 .objPlastico {
-  background-color: var(--plastico);
 }
 .objPapel {
-  background-color: var(--papel);
 }
 
 .objOrganico {
-  background-color: var(--organico);
 }
 
 .objVidro {
-  background-color: var(--vidro);
-}
+}*/
 
 .footer {
   display: grid;

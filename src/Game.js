@@ -116,7 +116,6 @@ class Game {
         } 
 
     }
-
     chooseTrash(){
         let num = Math.floor(Math.random() * 5);
         switch (num) {
@@ -182,6 +181,9 @@ class Game {
 
     ganhaPonto() {
         this.pontuacao.earnScore(1000, 1);
+        if (this.pontuacao.checkWin()){ //cada vez que ganha ponto, verifica se usuário atingiu pontuação mínima
+            this.stop();                //se atingiu, para o game
+        }
     }
     setNewDificulty() {
         //let newDificulty = 
