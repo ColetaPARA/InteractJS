@@ -7,19 +7,19 @@ const trashs = [
   },
   {
     trash_id: "#trashMetal",
-    acceptable_class: ".objMetal",
+    acceptable_class: ".lixo",
   },
   {
     trash_id: "#trashPapel",
-    acceptable_class: ".objPapel",
+    acceptable_class: ".lixo",
   },
   {
     trash_id: "#trashOrganico",
-    acceptable_class: ".objOrganico",
+    acceptable_class: ".lixo",
   },
   {
     trash_id: "#trashVidro",
-    acceptable_class: ".objVidro",
+    acceptable_class: ".lixo",
   },
 ];
 

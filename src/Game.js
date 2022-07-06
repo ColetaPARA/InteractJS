@@ -189,6 +189,25 @@ class Game {
         this.tempo.changeTimer(this.dificuldade.dificulty); 
         console.log(this.dificuldade.dificulty)
     }
+    badChoice(typeObj) {
+        switch (typeObj) {
+            case 'objMetal':
+                console.log("METAIS são no AMARELO")
+                break;
+            case 'objPlastico':
+                console.log("PLASTICOS são no VERMELHO")
+                break;
+            case 'objPapel':
+                console.log("PAPEIS são no AZUL")
+                break;
+            case 'objOrganico':
+                console.log("ORGANICOS são no MARROM")
+                break;
+            case 'objVidro':
+                console.log("VIDRO são no VERDE")
+                break;
+        }
+    }
 }
 
 export { Game };
