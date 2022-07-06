@@ -11,7 +11,7 @@ class Game {
         this.objetos = document.querySelector(".objects");
         this.pontuacao = new Score('score', dificulty.getDificulty());
         this.tempo = new Timer(dificulty.getDificulty());  
-        console.log('constroi game');
+        console.log('INICIANDO NOVO GAME');
         this.start();
     }
 
