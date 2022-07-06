@@ -191,6 +191,12 @@ class Game {
         console.log(this.dificuldade.dificulty)
     }
     badChoice(typeObj) {
+        if(this.pontuacao.loseHeart() != null){
+            console.log('executou');
+        }
+        else{
+            this.stop();           
+        }
         switch (typeObj) {
             case 'objMetal':
                 this.showMsg('METAL', 'AMARELO');
