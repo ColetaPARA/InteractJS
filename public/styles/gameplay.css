@@ -3,7 +3,7 @@
 
 #main {
   display: grid;
-  grid-template-rows: 7vh 85vh 8vh;
+  grid-template-rows: 8vh 83vh 9vh;
 }
 
 body{
@@ -17,7 +17,7 @@ body{
   color: white;
 
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   justify-items: center;
   align-items: center;
 
@@ -47,7 +47,18 @@ body{
   border-radius: 1rem;
 }
 
+.msg{
+  position: relative;
+  border: 2px solid black;
+  top: 200px;
+  right: 20px;
+  font-size: 1rem;
+  color: black;
+  font-weight: bold;
+  padding: 0.5rem;
+  border-radius: 1rem;
 
+}
 
 .objects {
   display: flex;

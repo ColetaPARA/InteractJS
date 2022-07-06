@@ -12,6 +12,7 @@ class Game {
         this.pontuacao = new Score('score', dificulty.getDificulty());
         this.tempo = new Timer(dificulty.getDificulty());  
         console.log('INICIANDO NOVO GAME');
+        
         this.start();
     }
 
@@ -192,21 +193,54 @@ class Game {
     badChoice(typeObj) {
         switch (typeObj) {
             case 'objMetal':
-                console.log("METAIS são no AMARELO")
+                this.showMsg('METAL', 'AMARELO');
                 break;
             case 'objPlastico':
-                console.log("PLASTICOS são no VERMELHO")
+                this.showMsg('PLASTICO', 'VERMELHO');
                 break;
             case 'objPapel':
-                console.log("PAPEIS são no AZUL")
+                this.showMsg('PAPEL', 'AZUL');
                 break;
             case 'objOrganico':
-                console.log("ORGANICOS são no MARROM")
+                this.showMsg('ORGANICO', 'MARROM');
                 break;
             case 'objVidro':
-                console.log("VIDRO são no VERDE")
+                this.showMsg('VIDRO', 'VERDE');
                 break;
         }
+    }
+    showMsg(obj, colorObj){
+        let cabecalho = document.querySelector(".topbar");
+        let msg = document.createElement("div");
+        msg.classList = 'msg';
+        msg.innerHTML = obj+" é no "+colorObj;
+        
+        switch (colorObj) { //seleciona cor do background
+            case 'AMARELO':
+                msg.style.backgroundColor = "#f0bb21";
+                break;
+            case 'VERMELHO':
+                msg.style.backgroundColor = "#df2913";
+                break;
+            case 'AZUL':
+                msg.style.backgroundColor = "#1165a5";
+                break;
+            case 'MARROM':
+                msg.style.backgroundColor = "#81591b";
+                break;
+            case 'VERDE':
+                msg.style.backgroundColor = "#21a552";
+                break;
+        }
+        cabecalho.appendChild(msg);
+        document.addEventListener('click', () => {
+            msg.remove();
+        });
+        /*
+        PODE SER VIA TIMEOUT TBM
+        setTimeout(() => {
+            msg.remove();
+        }, 1000);*/
     }
 }
 
