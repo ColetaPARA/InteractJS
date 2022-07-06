@@ -8,10 +8,10 @@ class Score {
     medium: 7000,
     hard: 10000,
   };
-  constructor(className, dificulty) {
+  constructor(dificulty) {
     this.#score = 0;
     this.#life = document.querySelector("#heart");
-    this.#className = className;
+    this.#className = 'score';
     this.#scoreToWin = this.#scoreToWin[dificulty];
   }
 
@@ -27,11 +27,9 @@ class Score {
 
   checkWin() {
     if (this.#score >= this.#scoreToWin){
-      console.log('VENCEU');
       return true;
     }
     else{
-      console.log('PERDEU');
       return false;
     }
   }
@@ -40,7 +38,6 @@ class Score {
   }
   loseHeart() {
     this.#life.remove();
-    console.log("perde coração");
     this.#life = document.querySelector("#heart");
     return this.#life = document.querySelector("#heart");
     //criar função para perder corações

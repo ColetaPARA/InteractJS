@@ -18,7 +18,7 @@ function dropzone(trash_obj) {
         draggableElement.remove();
         if(trash_obj['trash_id'].substring(6) == draggableElement.className.split(' ')[1].substring(3)){
           console.log('Acertou');
-          gameplay.ganhaPonto();
+          gameplay.earnPoints();
         }
         else{
           console.log('Errou');

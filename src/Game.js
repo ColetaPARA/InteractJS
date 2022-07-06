@@ -1,121 +1,67 @@
 import { Score } from "./Score.mjs";
-import { Timer } from "./timer.mjs";
+import { Timer } from "./Timer.mjs";
 import Dificulty from "./Dificulty.mjs";
 
 export const dificulty =  new Dificulty();
 
 class Game {
+    #dificulty;
+    #trashs;
+    #objects;
+    #points;
+    #time;
+
     constructor() {
-        this.dificulty = dificulty;
-        this.lixos = document.querySelectorAll("img.lixo");
-        this.objetos = document.querySelector(".objects");
-        this.pontuacao = new Score('score', dificulty.getDificulty());
-        this.tempo = new Timer(dificulty.getDificulty());  
-        console.log('INICIANDO NOVO GAME');
+        this.#dificulty = dificulty;
+        this.#trashs = document.querySelectorAll("img.lixo");
+        this.#objects = document.querySelector(".objects");
+        this.#points = new Score(this.#dificulty.getDificulty());
+        this.#time = new Timer(this.#dificulty.getDificulty());  
         
         this.start();
     }
 
     start() {
-        this.lixos.forEach((lixo) => { //gera os lixos iniciais com tipos aleatoriamente escolhidos
+        this.#trashs.forEach((trash) => { //gera os lixos iniciais com tipos aleatoriamente escolhidos
             let num = Math.floor(Math.random() * 5);
             switch (num) {
                 case 0:
-                    lixo.classList.add('objMetal')
-                    lixo.src = this.chooseSVGTrash('objMetal');
+                    trash.classList.add('objMetal')
+                    trash.src = this.chooseSVGTrash('objMetal');
                     break;
                 case 1:
-                    lixo.classList.add('objPlastico')
-                    lixo.src = this.chooseSVGTrash('objPlastico');
+                    trash.classList.add('objPlastico')
+                    trash.src = this.chooseSVGTrash('objPlastico');
                     break;
                 case 2:
-                    lixo.classList.add('objPapel')
-                    lixo.src = this.chooseSVGTrash('objPapel');
+                    trash.classList.add('objPapel')
+                    trash.src = this.chooseSVGTrash('objPapel');
                     break;
                 case 3:
-                    lixo.classList.add('objOrganico')
-                    lixo.src = this.chooseSVGTrash('objOrganico');
+                    trash.classList.add('objOrganico')
+                    trash.src = this.chooseSVGTrash('objOrganico');
                     break;
                 case 4:
-                    lixo.classList.add('objVidro')
-                    lixo.src = this.chooseSVGTrash('objVidro');
+                    trash.classList.add('objVidro')
+                    trash.src = this.chooseSVGTrash('objVidro');
                 break;
             }
         });
         this.createTrash();
-        this.tempo.startTimer();
-        this.verificaTime();
+        this.#time.startTimer();
+        this.checkTime();
         
     }
 
-    verificaTime(){       
+    checkTime(){       
         var myInterval = setInterval(() => {
-            if(this.tempo.time == -1){   
+            if(this.#time.time == -1){   
                 this.stop();
                 clearInterval(myInterval);
             }
         }, 1000);
     }
 
-    stop() {
-        //criar if que verifica se usuário perdeu
-        //criar if que verifica se usuário venceu
-        if (this.pontuacao.checkWin()){
-            let corpoHtml = document.body;
-            let divGanhou = document.createElement('div');   //cria div para o texto GAMEOVER
-            let divBotao = document.createElement('div');      //cria div para o botao
-            let inputBotaoSair = document.createElement('input');//cria input para adicionar o texto MENU do tipo botao
-            let inputBotaoProxima = document.createElement('input');//cria input para adicionar o texto MENU do tipo botao
-
-            divGanhou.classList.add('win');
-            divBotao.classList.add('botaoStop');         
-            inputBotaoSair.type = 'button';
-            inputBotaoSair.value = "  SAIR  ";
-            inputBotaoProxima.type = 'button';
-            inputBotaoProxima.value = "  PRÓXIMA FASE  ";
-            divGanhou.innerHTML = `PARABÉNS! VOCÊ VENCEU </br>SCORE: ${this.pontuacao.current}`;
-            corpoHtml.appendChild(divGanhou);
-            divGanhou.appendChild(divBotao);
-            divBotao.appendChild(inputBotaoSair);
-            divBotao.appendChild(inputBotaoProxima);
-            inputBotaoSair.onclick = function () {
-                console.log("clicou");
-                window.location.href = "/menu";
-            }
-            inputBotaoProxima.onclick = function () {
-                console.log("clicou");
-                window.location.href = "/gameplay";
-            }            
-        }
-        else{
-            let corpoHtml = document.body;
-            let divGameOver = document.createElement('div');   //cria div para o texto GAMEOVER
-            let divBotao = document.createElement('div');      //cria div para o botao
-            let inputBotaoSair = document.createElement('input');//cria input para adicionar o texto MENU do tipo botao
-            let inputBotaoTente = document.createElement('input');//cria input para adicionar o texto MENU do tipo botao
-
-            divGameOver.classList.add('gameover');
-            divBotao.classList.add('botaoStop');         
-            inputBotaoSair.type = 'button';
-            inputBotaoSair.value = "  SAIR  ";
-            inputBotaoTente.type = 'button';
-            inputBotaoTente.value = "  TENTE NOVAMENTE  ";
-            divGameOver.innerHTML = `GAME OVER </br>SCORE: ${this.pontuacao.current}`;
-            corpoHtml.appendChild(divGameOver);
-            divGameOver.appendChild(divBotao);
-            divBotao.appendChild(inputBotaoSair);
-            divBotao.appendChild(inputBotaoTente);
-            inputBotaoSair.onclick = function () {
-                console.log("clicou");
-                window.location.href = "/menu";
-            }
-            inputBotaoTente.onclick = function () {
-                console.log("clicou");
-                window.location.href = "/gameplay";
-            } 
-        } 
-
-    }
     chooseTrash(){
         let num = Math.floor(Math.random() * 5);
         switch (num) {
@@ -151,54 +97,32 @@ class Game {
                 num = Math.floor(Math.random() * 14);
                 return 'assets/svgs/glass/glass'+num+'.svg';
         }
-        
-        
-        /*switch (num) {
-            case 0:
-                return 'assets/svgs/'+typeObj+'/'+typeObj+num+'.svg';
-            case 1:
-                return 'assets/svgs/'+typeObj+'/'+typeObj+num+'.svg';
-            case 2:
-                return 'assets/svgs/'+typeObj+'/'+typeObj+num+'.svg';
-            case 3:
-                return 'assets/svgs/'+typeObj+'/'+typeObj+num+'.svg';
-            case 4:
-                return 'assets/svgs/'+typeObj+'/'+typeObj+num+'.svg';
-        }
-        PARA A REFATORAÇÃO
-        */
     }
+
     createTrash(){
         setInterval(() => {
             if(document.querySelectorAll("img.lixo").length < 5){ //verifica se tem menos de 5 lixos na tela
               let trash = document.createElement("img");
               trash.classList = this.chooseTrash();
               trash.src = this.chooseSVGTrash(trash.className.split(' ')[1]); //pega o segundo elemento da classe, pulado a classe lixo
-              this.objetos.appendChild(trash);
+              this.#objects.appendChild(trash);
             }
-          }, 5000)
+          }, 5000);
     }
 
-    ganhaPonto() {
-        this.pontuacao.earnScore(1000, 1);
-        if (this.pontuacao.checkWin()){ //cada vez que ganha ponto, verifica se usuário atingiu pontuação mínima
+    earnPoints() {
+        this.#points.earnScore(1000, 1);
+        if (this.#points.checkWin()){ //cada vez que ganha ponto, verifica se usuário atingiu pontuação mínima
             this.stop();                //se atingiu, para o game
         }
     }
-    setNewDificulty() {
-        //let newDificulty = 
-        this.dificuldade.setDificulty();
-        this.pontuacao.changeScoreToWin(this.dificuldade.dificulty);
-        this.tempo.changeTimer(this.dificuldade.dificulty); 
-        console.log(this.dificuldade.dificulty)
-    }
     badChoice(typeObj) {
-        if(this.pontuacao.loseHeart() != null){
-            console.log('executou');
+        if(this.#points.loseHeart() != null){
         }
         else{
             this.stop();           
         }
+
         switch (typeObj) {
             case 'objMetal':
                 this.showMsg('METAL', 'AMARELO');
@@ -249,6 +173,60 @@ class Game {
         setTimeout(() => {
             msg.remove();
         }, 1000);*/
+    }
+    nextStage(){
+        //let buttonNextStage = document.querySelector("");
+    }
+    stop() {
+        if (this.#points.checkWin()){
+            let bodyHtml = document.body;
+            let divWin = document.createElement('div');   //cria div para o texto GAMEOVER
+            let divButton = document.createElement('div');      //cria div para o botao
+            let inputLeaveButton = document.createElement('input');//cria input para adicionar o texto MENU do tipo botao
+            let inputNextButton = document.createElement('input');//cria input para adicionar o texto MENU do tipo botao
+
+            divWin.classList.add('win');
+            divButton.classList.add('botaoStop');         
+            inputLeaveButton.type = 'button'; inputLeaveButton.value = "  SAIR  ";
+            inputNextButton.type = 'button'; inputNextButton.value = "  PRÓXIMA FASE  ";
+            divWin.innerHTML = `PARABÉNS! VOCÊ VENCEU </br>SCORE: ${this.#points.current}`;
+            bodyHtml.appendChild(divWin);
+            divWin.appendChild(divButton);
+            divButton.appendChild(inputLeaveButton);
+            divButton.appendChild(inputNextButton);
+            inputLeaveButton.onclick = function () {
+                window.location.href = "/menu";
+            }
+            inputNextButton.onclick = function () {
+                window.location.href = "/gameplay";
+            }            
+        }
+        else{
+            let bodyHtml = document.body;
+            let divGameOver = document.createElement('div');   //cria div para o texto GAMEOVER
+            let divButton = document.createElement('div');      //cria div para o botao
+            let inputLeaveButton = document.createElement('input');//cria input para adicionar o texto MENU do tipo botao
+            let inputTryAgainButton = document.createElement('input');//cria input para adicionar o texto MENU do tipo botao
+
+            divGameOver.classList.add('gameover');
+            divButton.classList.add('botaoStop');         
+            inputLeaveButton.type = 'button';
+            inputLeaveButton.value = "  SAIR  ";
+            inputTryAgainButton.type = 'button';
+            inputTryAgainButton.value = "  TENTE NOVAMENTE  ";
+            divGameOver.innerHTML = `GAME OVER </br>SCORE: ${this.#points.current}`;
+            bodyHtml.appendChild(divGameOver);
+            divGameOver.appendChild(divButton);
+            divButton.appendChild(inputLeaveButton);
+            divButton.appendChild(inputTryAgainButton);
+            inputLeaveButton.onclick = function () {
+                window.location.href = "/menu";
+            }
+            inputTryAgainButton.onclick = function () {
+                window.location.href = "/gameplay";
+            } 
+        } 
+
     }
 }
 
