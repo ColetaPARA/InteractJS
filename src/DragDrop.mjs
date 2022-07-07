@@ -12,16 +12,14 @@ function dropzone(trash_obj) {
   interact(trash_obj.trash_id)
     .dropzone({
       accept: trash_obj.acceptable_class,
-      overlap: 1,
+      overlap: 0.5,
       ondrop: (event) => {
         var draggableElement = event.relatedTarget;
         draggableElement.remove();
         if(trash_obj['trash_id'].substring(6) == draggableElement.className.split(' ')[1].substring(3)){
-          console.log('Acertou');
           gameplay.earnPoints();
         }
         else{
-          console.log('Errou');
           gameplay.badChoice(draggableElement.className.split(' ')[1]);
         }
       },
@@ -39,7 +37,7 @@ function dropzone(trash_obj) {
  */
 function draggable(obj_id) {
   interact(obj_id).draggable({
-    inertia: true,
+    inertia: false,
     modifiers: [
       interact.modifiers.restrictRect({
         restriction: "#main",

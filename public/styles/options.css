@@ -1,21 +1,11 @@
 @import url(main.css);
 @import url(menu.css);
 
-#main {
-  display: grid;
-  justify-content: center;
-  align-content: center;
-  height: 100vh;
+.topbar {
+  position: fixed;
+  top: 0
 }
 
-#easy{
-  initial-value: "Fácil";
-}
-
-#medium{
-  initial-value: "Médio";
-}
-
-#hard{
-  initial-value: "Dificil";
+.topbar input {
+  width: 100%;
 }

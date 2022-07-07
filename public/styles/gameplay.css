@@ -17,7 +17,7 @@ body{
   color: white;
 
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(5, 1fr);
   justify-items: center;
   align-items: center;
 
@@ -101,6 +101,7 @@ body{
   grid-template-columns: repeat(5, 1fr);
   justify-items: center;
   align-content: flex-end;
+  margin-bottom: 50%;
 }
 
 .lixeira {
