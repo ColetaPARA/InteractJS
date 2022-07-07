@@ -16,6 +16,7 @@ function dropzone(trash_obj) {
       ondrop: (event) => {
         var draggableElement = event.relatedTarget;
         draggableElement.remove();
+
         if(trash_obj['trash_id'].substring(6) == draggableElement.className.split(' ')[1].substring(3)){
           gameplay.earnPoints();
         }
@@ -23,11 +24,6 @@ function dropzone(trash_obj) {
           gameplay.badChoice(draggableElement.className.split(' ')[1]);
         }
       },
-    })
-    .on("hold", (event) => {
-      console.log(
-        "Ao precionar a lixeira, deve aparecer alguns exemplos de lixos compativeis"
-      );
     });
 }
 
@@ -49,7 +45,7 @@ function draggable(obj_id) {
 
 function dragMoveListener(event) {
   let target = event.target;
-  // calcula a positção final do objeto
+  // calcula a posição final do objeto
   let x = (parseFloat(target.getAttribute("data-x")) || 0) + event.dx;
   let y = (parseFloat(target.getAttribute("data-y")) || 0) + event.dy;
 
