@@ -1,6 +1,6 @@
-/* Arquivo de estilização base */
 @import url(main.css);
 @import url(botoes.css);
+
 #main {
   display: grid;
   justify-content: center;

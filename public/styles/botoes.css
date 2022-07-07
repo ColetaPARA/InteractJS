@@ -1,14 +1,11 @@
 .botao input{
-  /* tamanho */
   width: 10rem;
   height: 5vh;
   margin: 1rem;
 
-  /* fonte */
   font-weight: bold;
   font-size: x-large;
 
-  /* estilo */
   background-color: var(--amarelo-claro);
   border: 2px solid black;
   border-radius: 1rem;
@@ -46,14 +43,11 @@
 }
 
 .botaoStop input{
-  /* tamanho */
   margin: 1rem;
 
-  /* fonte */
   font-weight: bold;
   font-size: x-large;
 
-  /* estilo */
   background-color: var(--amarelo-claro);
   border: 2px solid black;
   border-radius: 1rem;

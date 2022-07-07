@@ -15,13 +15,12 @@ body{
 .topbar {
   font-family: PixelFont;
   color: white;
+  background-color: black;
 
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   justify-items: center;
   align-items: center;
-
-  background-color: black;
 }
 
 .meio {
@@ -53,17 +52,18 @@ body{
   color: black;
   font-weight: bold;
   background-color: white;
+
   padding: 0 1rem;
   border-radius: 1rem;
 }
 
 .msg{
   position: relative;
-  border: 2px solid black;
   bottom: 100px;
-  /*right: 20px;*/
-  font-size: 1rem;
+
+  border: 2px solid black;
   color: black;
+  font-size: 1rem; 
   font-weight: bold;
   padding: 0.5rem;
   border-radius: 1rem;
@@ -81,27 +81,12 @@ body{
   width: 6vh;
   margin: 10px;
 }
-/*
-.objMetal {
-}
-
-.objPlastico {
-}
-.objPapel {
-}
-
-.objOrganico {
-}
-
-.objVidro {
-}*/
 
 .footer {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   justify-items: center;
   align-content: flex-end;
-  margin-bottom: 50%;
 }
 
 .lixeira {
@@ -112,10 +97,10 @@ body{
 .gameover{
   position:fixed; 
   z-index:100000; 
-  left:0; 
+  /*left:0; 
   top:0; 
   bottom:0; 
-  right:0; 
+  right:0; */
   background-color:rgba(0,0,0,0.8);
   font-size:80px; 
   color: var(--vermelho); 
