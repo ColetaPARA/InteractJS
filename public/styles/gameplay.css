@@ -3,7 +3,7 @@
 
 #main {
   display: grid;
-  grid-template-rows: 8vh 83vh 9vh;
+  grid-template-rows: 8vh 70vh 13vh 9vh;
 }
 
 body{
@@ -22,6 +22,16 @@ body{
   align-items: center;
 
   background-color: black;
+}
+
+.meio {
+    font-family: PixelFont;
+    color: white;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
 }
 
 #life {
@@ -50,8 +60,8 @@ body{
 .msg{
   position: relative;
   border: 2px solid black;
-  top: 200px;
-  right: 20px;
+  bottom: 100px;
+  /*right: 20px;*/
   font-size: 1rem;
   color: black;
   font-weight: bold;

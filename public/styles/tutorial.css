@@ -1,1 +1,143 @@
-@import url(gameplay.css);
+@import url(main.css);  
+@import url(botoes.css);
+
+#main {
+  display: grid;
+  grid-template-rows: 8vh 70vh 13vh 9vh;
+}
+
+body{
+  background-image: url(../assets/imgs/fundo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+.topbar {
+  font-family: PixelFont;
+  color: white;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+
+  background-color: black;
+}
+
+.meio {
+    font-family: PixelFont;
+    color: white;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+#life {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+}
+
+#life img {
+  height: 30px;
+}
+
+#score {
+  font-size: 2rem;
+}
+
+#time{
+  font-size: 2rem;
+  color: black;
+  font-weight: bold;
+  background-color: white;
+  padding: 0 1rem;
+  border-radius: 1rem;
+}
+
+.msg{
+  position: relative;
+  border: 2px solid black;
+  bottom: 100px;
+  /*right: 20px;*/
+  font-size: 1rem;
+  color: black;
+  font-weight: bold;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.objects {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.lixo {
+  height: 6vh;
+  width: 6vh;
+  margin: 10px;
+}
+/*
+.objMetal {
+}
+
+.objPlastico {
+}
+.objPapel {
+}
+
+.objOrganico {
+}
+
+.objVidro {
+}*/
+
+.footer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+  align-content: flex-end;
+}
+
+.lixeira {
+  height: 9vh;
+  width: 9vh;
+}
+
+.gameover{
+  position:fixed; 
+  z-index:100000; 
+  left:0; 
+  top:0; 
+  bottom:0; 
+  right:0; 
+  background-color:rgba(0,0,0,0.8);
+  font-size:80px; 
+  color: var(--vermelho); 
+  font-weight:bold; 
+  text-align:center; 
+  align-items: center;
+  text-indent:0;  
+  line-height:150px;
+}
+
+.win{
+  position:fixed; 
+  z-index:100000; 
+  left:0; 
+  top:0; 
+  bottom:0; 
+  right:0; 
+  background-color:rgba(0,0,0,0.8);
+  font-size:80px; 
+  color: var(--verde); 
+  font-weight:bold; 
+  text-align:center; 
+  align-items: center;
+  text-indent:0;  
+  line-height:150px;
+}

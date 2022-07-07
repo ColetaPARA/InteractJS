@@ -142,9 +142,15 @@ class Game {
         }
     }
     showMsg(obj, colorObj){
-        let cabecalho = document.querySelector(".topbar");
+        let cabecalho = document.querySelector(".meio");
         let msg = document.createElement("div");
+        let divButton = document.createElement("div");
+        let inputBotao = document.createElement("input");
+        divButton.classList.add('botaoContinuar');
         msg.classList = 'msg';
+        inputBotao.type = 'button'; 
+        inputBotao.value = "  CONTINUAR  ";
+        divButton.appendChild(inputBotao);
         msg.innerHTML = obj+" é no "+colorObj;
         
         switch (colorObj) { //seleciona cor do background
@@ -165,8 +171,10 @@ class Game {
                 break;
         }
         cabecalho.appendChild(msg);
-        document.addEventListener('click', () => {
+        cabecalho.appendChild(divButton);
+        divButton.addEventListener('click', () => {
             msg.remove();
+            divButton.remove();
         });
         /*
         PODE SER VIA TIMEOUT TBM

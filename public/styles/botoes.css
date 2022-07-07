@@ -69,3 +69,17 @@
   transform: translateX(0.5vh) translateY(0.5vh);
   transition: 100ms ease-in;
 }
+
+.botaoContinuar input{
+  position: relative;
+  bottom: 100px;
+  margin: 1rem;
+  font-weight: bold;
+  font-size: x-large;
+
+  background-color: var(--vermelho);
+  border: 2px solid black;
+  border-radius: 1rem;
+
+  box-shadow: 0.5vh 0.5vh black;
+}
