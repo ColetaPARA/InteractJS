@@ -106,7 +106,7 @@ class Game {
         trash.src = this.chooseSVGTrash(trash.className.split(" ")[1]);
         this.#objects.appendChild(trash);
       }
-    }, 5000);
+    }, 3000);
   }
 
   earnPoints() {
