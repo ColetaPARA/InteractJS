@@ -23,7 +23,6 @@ class Game {
 
   start() {
     this.#trashs.forEach((trash) => {
-      //gera os lixos iniciais com tipos aleatoriamente escolhidos
       let num = Math.floor(Math.random() * 5);
       switch (num) {
         case 0:
@@ -102,10 +101,9 @@ class Game {
   createTrash() {
     setInterval(() => {
       if (document.querySelectorAll("img.lixo").length < 5) {
-        //verifica se tem menos de 5 lixos na tela
         let trash = document.createElement("img");
         trash.classList = this.chooseTrash();
-        trash.src = this.chooseSVGTrash(trash.className.split(" ")[1]); //pega o segundo elemento da classe, pulado a classe lixo
+        trash.src = this.chooseSVGTrash(trash.className.split(" ")[1]);
         this.#objects.appendChild(trash);
       }
     }, 5000);
@@ -113,11 +111,11 @@ class Game {
 
   earnPoints() {
     this.#points.earnScore(1000, 1);
-    if (this.#points.checkWin()) {
-      //cada vez que ganha ponto, verifica se usuário atingiu pontuação mínima
-      this.stop(); //se atingiu, para o game
+    if (this.#points.checkWin()) {  
+      this.stop(); 
     }
   }
+
   badChoice(typeObj) {
     if (this.#points.loseHeart() != null) {
     } else {
@@ -142,6 +140,7 @@ class Game {
         break;
     }
   }
+
   showMsg(obj, colorObj) {
     let cabecalho = document.querySelector(".meio");
     let msg = document.createElement("div");
@@ -155,7 +154,7 @@ class Game {
     msg.innerHTML = obj + " é no " + colorObj;
 
     switch (
-      colorObj //seleciona cor do background
+      colorObj
     ) {
       case "AMARELO":
         msg.style.backgroundColor = "#f0bb21";
@@ -180,21 +179,19 @@ class Game {
       divButton.remove();
     });
     /*
-        PODE SER VIA TIMEOUT TBM
-        setTimeout(() => {
-            msg.remove();
-        }, 1000);*/
+    PODE SER VIA TIMEOUT TBM
+    setTimeout(() => {
+        msg.remove();
+    }, 1000);*/
   }
-  nextStage() {
-    //let buttonNextStage = document.querySelector("");
-  }
+  
   stop() {
     if (this.#points.checkWin()) {
       let bodyHtml = document.body;
-      let divWin = document.createElement("div"); //cria div para o texto GAMEOVER
-      let divButton = document.createElement("div"); //cria div para o botao
-      let inputLeaveButton = document.createElement("input"); //cria input para adicionar o texto MENU do tipo botao
-      let inputNextButton = document.createElement("input"); //cria input para adicionar o texto MENU do tipo botao
+      let divWin = document.createElement("div");
+      let divButton = document.createElement("div");
+      let inputLeaveButton = document.createElement("input");
+      let inputNextButton = document.createElement("input");
 
       divWin.classList.add("win");
       divButton.classList.add("botaoStop");
@@ -211,16 +208,16 @@ class Game {
       divButton.appendChild(inputNextButton);
       inputLeaveButton.onclick = function () {
         window.location.href = "/menu";
-      };
+      }
       inputNextButton.onclick = function () {
         window.location.href = "/gameplay";
-      };
+      }
     } else {
       let bodyHtml = document.body;
-      let divGameOver = document.createElement("div"); //cria div para o texto GAMEOVER
-      let divButton = document.createElement("div"); //cria div para o botao
-      let inputLeaveButton = document.createElement("input"); //cria input para adicionar o texto MENU do tipo botao
-      let inputTryAgainButton = document.createElement("input"); //cria input para adicionar o texto MENU do tipo botao
+      let divGameOver = document.createElement("div");
+      let divButton = document.createElement("div");
+      let inputLeaveButton = document.createElement("input");
+      let inputTryAgainButton = document.createElement("input");
 
       divGameOver.classList.add("gameover");
       divButton.classList.add("botaoStop");
@@ -235,10 +232,10 @@ class Game {
       divButton.appendChild(inputTryAgainButton);
       inputLeaveButton.onclick = function () {
         window.location.href = "/menu";
-      };
+      }
       inputTryAgainButton.onclick = function () {
         window.location.href = "/gameplay";
-      };
+      }
     }
   }
 }
