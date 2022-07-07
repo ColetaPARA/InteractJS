@@ -8,28 +8,28 @@
   </head>
   <body>
     <div id="main">
-      <div class="topbar">        
+      <div class="topbar">
         <div  class="botaoVoltar">
           <input
           type="button"
           onclick="location.href='/menu';"
           value="Sair"
         />
-        </div>        
+        </div>
         <div id="score">0000</div>
         <div id="time">--</div>
         <div id="life">
-          <img src="assets/svgs/pixel_heart.svg">
-          <img src="assets/svgs/pixel_heart.svg">
-          <img src="assets/svgs/pixel_heart.svg">
+          <img id="heart" src="assets/svgs/pixel_heart.svg">
+          <img id="heart" src="assets/svgs/pixel_heart.svg">
+          <img id="heart" src="assets/svgs/pixel_heart.svg">
         </div>
-        <div>
-          <input 
+        <div>       
+          <input
             type="image" 
             src="assets/fullscreen.svg" height="35" 
             onclick="goFS();"
           />
-        </div>     
+        </div>   
       </div>
       <div class="objects notSelected">
         <img class="lixo"/>
@@ -38,6 +38,7 @@
         <img class="lixo"/>
         <img class="lixo"/>
       </div>
+      <div class="meio"></div>
       <div class="footer">
         <img class="lixeira" id="trashPlastico" src="assets/svgs/pixel_lixeira_plastico.svg" />
         <img class="lixeira" id="trashMetal" src="assets/svgs/pixel_lixeira_metal.svg" />

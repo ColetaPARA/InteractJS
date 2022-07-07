@@ -3,7 +3,7 @@
 
 #main {
   display: grid;
-  grid-template-rows: 7vh 85vh 8vh;
+  grid-template-rows: 8vh 70vh 13vh 9vh;
 }
 
 body{
@@ -22,6 +22,16 @@ body{
   align-items: center;
 
   background-color: black;
+}
+
+.meio {
+    font-family: PixelFont;
+    color: white;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
 }
 
 #life {
@@ -47,30 +57,44 @@ body{
   border-radius: 1rem;
 }
 
-.lixo {
-  height: 7vh;
-  width: 7vh;
-  margin: 10px;
+.msg{
+  position: relative;
+  border: 2px solid black;
+  bottom: 100px;
+  /*right: 20px;*/
+  font-size: 1rem;
+  color: black;
+  font-weight: bold;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  text-align: center;
 }
 
+.objects {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.lixo {
+  height: 6vh;
+  width: 6vh;
+  margin: 10px;
+}
+/*
 .objMetal {
-  background-color: var(--metal);
 }
 
 .objPlastico {
-  background-color: var(--plastico);
 }
 .objPapel {
-  background-color: var(--papel);
 }
 
 .objOrganico {
-  background-color: var(--organico);
 }
 
 .objVidro {
-  background-color: var(--vidro);
-}
+}*/
 
 .footer {
   display: grid;

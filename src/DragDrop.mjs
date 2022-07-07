@@ -15,8 +15,13 @@ function dropzone(trash_obj) {
       overlap: 0.5,
       ondrop: (event) => {
         var draggableElement = event.relatedTarget;
-        gameplay.ganhaPonto();
         draggableElement.remove();
+        if(trash_obj['trash_id'].substring(6) == draggableElement.className.split(' ')[1].substring(3)){
+          gameplay.earnPoints();
+        }
+        else{
+          gameplay.badChoice(draggableElement.className.split(' ')[1]);
+        }
       },
     })
     .on("hold", (event) => {

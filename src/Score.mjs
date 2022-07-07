@@ -1,32 +1,17 @@
-// import interact from "https://cdn.interactjs.io/v1.9.20/interactjs/index.js";
-
-// var infoPontos = document.getElementById("score");
-// var pontos = 0;
-
-// function iniciarJogo() {
-//   var goFS = document.getElementById("goFS");
-//   goFS.addEventListener(
-//     "click",
-//     function () {
-//       var videoElement = document.getElementById("main").requestFullscreen();
-//       videoElement.requestFullscreen();
-//     },
-//     false
-//   );
-// }
-
 class Score {
   #score;
   #className;
+  #life;
 
   #scoreToWin = {
     easy: 5000, //valor teste
     medium: 7000,
     hard: 10000,
   };
-  constructor(className, dificulty) {
+  constructor(dificulty) {
     this.#score = 0;
-    this.#className = className;
+    this.#life = document.querySelector("#heart");
+    this.#className = 'score';
     this.#scoreToWin = this.#scoreToWin[dificulty];
   }
 
@@ -42,11 +27,9 @@ class Score {
 
   checkWin() {
     if (this.#score >= this.#scoreToWin){
-      console.log('VENCEU');
       return true;
     }
     else{
-      console.log('PERDEU');
       return false;
     }
   }
@@ -54,6 +37,9 @@ class Score {
     this.#scoreToWin = this.#scoreToWin[dificuldade];
   }
   loseHeart() {
+    this.#life.remove();
+    this.#life = document.querySelector("#heart");
+    return this.#life = document.querySelector("#heart");
     //criar função para perder corações
   }
 

@@ -19,7 +19,6 @@ app.set("view engine", "ejs");
 app.listen(port, () => { console.log(`App startup...`); });
 
 // *** GET Routes - Mostra as paginas ***
-
 // Menu
 app.get("/", function (req, res) {
   res.render("pages/splash");
